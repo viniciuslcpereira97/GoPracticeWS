@@ -27,3 +27,12 @@ func Find(conditions interface {}, fields interface {}) (user User) {
 
     return user
 }
+
+// List of Users that satisfies conditions
+func Where(conditions interface {}, fields interface {}) (users []User) {
+    var result []interface{}
+    collection.Find(conditions).Select(fields).All(&result)
+    mapstructure.Decode(result, &users)
+
+    return users
+}

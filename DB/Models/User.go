@@ -4,7 +4,7 @@ import (
     "practice-ws/DB"
 )
 
-var collection = db.Connect().C("users")
+var collection = db.GetInstance().C("users")
 
 // User struct
 type User struct {

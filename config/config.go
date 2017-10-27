@@ -8,14 +8,21 @@ import (
     "encoding/json"
 )
 
+// Configuration file path
 const FILE_PATH = "./config/config.json"
 
+// Config struct
 type Config struct {
-    Db string
+
+    DB_HOST string // DB_HOST variable
+    DB_NAME string // DB_NAME variable
+    
 }
 
+// Configuration struct initializer
 var configuration Config
 
+// SetUp configuration values
 func SetUp() {
 
     config_file, _err := os.Open(FILE_PATH)
@@ -33,12 +40,16 @@ func SetUp() {
 
 }
 
+// Get Config Struct value
 func GetConfig(conf string) (conf_field interface {}){
     
-    SetUp()
+    // Check if struct has values or not
+    if reflect.DeepEqual(Config {}, configuration) {
+        SetUp()
+    }
 
     valr := reflect.ValueOf(configuration)
-    conf_field = reflect.Indirect(valr).FieldByName(strings.Title(conf)).Interface()
+    conf_field = reflect.Indirect(valr).FieldByName(strings.ToUpper(conf)).Interface()
 
     return conf_field
 

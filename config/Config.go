@@ -1,7 +1,6 @@
 package config
 
 import (
-    _"fmt"
     "os"
     "strings"
     "reflect"

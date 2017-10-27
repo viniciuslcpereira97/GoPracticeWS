@@ -2,6 +2,7 @@ package models
 
 import (
     "practice-ws/DB"
+    "github.com/mitchellh/mapstructure"
 )
 
 var collection = db.GetInstance().C("users")
@@ -19,7 +20,10 @@ func Create(user interface {}) {
 }
 
 // Find User by conditions
-func Find(conditions interface {}, fields interface {}) (user map[string] interface {}) {
-    collection.Find(conditions).Select(fields).One(&user)
+func Find(conditions interface {}, fields interface {}) (user User) {
+    var result interface {}
+    collection.Find(conditions).Select(fields).One(&result)
+    mapstructure.Decode(result, &user)
+
     return user
 }

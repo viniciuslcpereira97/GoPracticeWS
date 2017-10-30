@@ -12,10 +12,8 @@ const FILE_PATH = "./config/config.json"
 
 // Config struct
 type Config struct {
-
     DB_HOST string // DB_HOST variable
     DB_NAME string // DB_NAME variable
-    
 }
 
 // Configuration struct initializer
@@ -23,7 +21,6 @@ var configuration Config
 
 // SetUp configuration values
 func SetUp() {
-
     config_file, _err := os.Open(FILE_PATH)
 
     if _err != nil {
@@ -36,12 +33,10 @@ func SetUp() {
     if _err != nil {
         panic(_err)
     }
-
 }
 
 // Get Config Struct value
 func GetConfig(conf string) (conf_field interface {}){
-    
     // Check if struct has values or not
     if reflect.DeepEqual(Config {}, configuration) {
         SetUp()
@@ -51,5 +46,4 @@ func GetConfig(conf string) (conf_field interface {}){
     conf_field = reflect.Indirect(valr).FieldByName(strings.ToUpper(conf)).Interface()
 
     return conf_field
-
 }

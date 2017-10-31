@@ -16,7 +16,9 @@ type User struct {
 
 // Insert new user at database
 func Create(user interface {}) {
-    collection.Insert(&user)
+    var new_user User
+    mapstructure.Decode(user, &new_user)
+    collection.Insert(new_user)
 }
 
 // Find User by conditions

@@ -2,9 +2,25 @@ package usercontroller
 
 import (
     "fmt"
+    "strconv"
     "net/http"
+    "encoding/json"
+    "github.com/gorilla/mux"
+    "practice-ws/DB/Models/Users"
 )
 
-func AllUsers(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprint(w, "All Users")
+// Get All users
+func All(w http.ResponseWriter, r *http.Request) {
+    users, _ := json.Marshal(users.All())
+    fmt.Fprint(w, string(users))
+}
+
+// Get Users By Age
+func ByAge(w http.ResponseWriter, r *http.Request) {
+    user_age, _ := strconv.ParseInt(mux.Vars(r)["age"], 10, 64)
+    condition := map[string] int64 {
+        "age": user_age,
+    }
+    users, _ := json.Marshal(users.Where(condition))
+    fmt.Fprint(w, string(users))
 }

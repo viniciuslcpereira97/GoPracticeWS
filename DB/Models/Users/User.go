@@ -39,6 +39,7 @@ func Where(conditions interface {}, fields ...interface {}) (users []User) {
     return users
 }
 
+// Find User by id
 func ById(user_id string) (user User) {
     var result interface {}
     condition := map[string] string {
@@ -50,6 +51,7 @@ func ById(user_id string) (user User) {
     return user
 }
 
+// All Users
 func All() (users []User) {
     var result []interface{}
     collection.Find(nil).All(&result)

@@ -74,5 +74,6 @@ func Serve() {
 func AddRoutes() {
 
     //Users
-    Get("users.index", "/users", usercontroller.AllUsers)
+    Get("users.index", "/users", usercontroller.All)
+    Get("users.byAge", "/users/age/{age}", usercontroller.ByAge)
 }

@@ -1,8 +1,10 @@
 package routes
 
 import (
+    "fmt"
     "net/http"
     "github.com/gorilla/mux"
+    "practice-ws/Controllers/Users"
 )
 
 // Route struct
@@ -53,8 +55,9 @@ func Get(name string, route string, handler http.HandlerFunc) {
 // Handle all registered routes before provide Router
 func LoadRoutes() {
     InitRouter()
-
+    AddRoutes()
     for _, route := range routes {
+        fmt.Printf("route_name: %s  -->  route_pattern: %s\n", route.Name, route.Path)
         Router.HandleFunc(route.Path, route.Handler).Methods(route.Methods)
     }
 }
@@ -64,4 +67,12 @@ func LoadRoutes() {
 func Serve() {
     LoadRoutes()
     http.ListenAndServe(":8888", Router)
+}
+
+// Temporary function to add routes
+// TODO: Separate in files of specific services
+func AddRoutes() {
+
+    //Users
+    Get("users.index", "/users", usercontroller.AllUsers)
 }

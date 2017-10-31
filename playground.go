@@ -8,7 +8,7 @@ import (
 
 func main() {
     routes.Get("say.hello", "/hello", say_hello)
-    routes.Serve()    
+    routes.Serve()
 }
 
 func say_hello(w http.ResponseWriter, r *http.Request) {

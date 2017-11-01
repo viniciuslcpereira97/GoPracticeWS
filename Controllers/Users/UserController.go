@@ -24,3 +24,14 @@ func ByAge(w http.ResponseWriter, r *http.Request) {
     users, _ := json.Marshal(users.Where(condition))
     fmt.Fprint(w, string(users))
 }
+
+// Create new user
+func CreateNew(w http.ResponseWriter, r *http.Request) {
+    r.ParseForm()
+    data := r.PostForm
+    user := make(map[string] interface {})
+    for key, _ := range data {
+        user[key] = r.PostFormValue(key) 
+    }
+    users.Create(user)
+}

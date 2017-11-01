@@ -76,4 +76,5 @@ func AddRoutes() {
     //Users
     Get("users.index", "/users", usercontroller.All)
     Get("users.byAge", "/users/age/{age}", usercontroller.ByAge)
+    Post("users.createNew", "/users/new", usercontroller.CreateNew)
 }

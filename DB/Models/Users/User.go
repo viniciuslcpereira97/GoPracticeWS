@@ -10,7 +10,7 @@ var collection = db.GetInstance().C("users")
 // User struct
 type User struct {
     Name string
-    Age int
+    Age interface{}
     Status string
 }
 

@@ -16,20 +16,33 @@ type Route struct {
 }
 
 // Array of Routes
-var routes []Route
+var routes = make(map[string] Route)
 
 // Router instance
 var Router *mux.Router
 
 // Initialize new Router instance
 func InitRouter() {
+
     if Router == nil {
         Router = mux.NewRouter()
     }
+
+}
+
+func checkIfRouteIsDuplicated(name string) {
+
+    if _, route_exists := routes[name]; route_exists {
+        panic("route " + name + " exists at routes list")
+    }
+
 }
 
 // Register POST route
 func Post(name string, route string, handler http.HandlerFunc) {
+
+    checkIfRouteIsDuplicated(name)
+
     new_route := Route {
         name,
         route,
@@ -37,11 +50,14 @@ func Post(name string, route string, handler http.HandlerFunc) {
         handler,
     }
 
-    routes = append(routes, new_route)
+    routes[name] = new_route
 }
 
 // Register new GET route
 func Get(name string, route string, handler http.HandlerFunc) {
+    
+    checkIfRouteIsDuplicated(name)
+
     new_route := Route {
         name, 
         route,
@@ -49,7 +65,7 @@ func Get(name string, route string, handler http.HandlerFunc) {
         handler,
     }
 
-    routes = append(routes, new_route)
+    routes[name] = new_route
 }
 
 // Handle all registered routes before provide Router
@@ -77,4 +93,5 @@ func AddRoutes() {
     Get("users.index", "/users", usercontroller.All)
     Get("users.byAge", "/users/age/{age}", usercontroller.ByAge)
     Post("users.createNew", "/users/new", usercontroller.CreateNew)
+
 }

@@ -1,6 +1,7 @@
 package usercontroller
 
 import (
+    "reflect"
     "fmt"
     "strconv"
     "net/http"
@@ -28,10 +29,16 @@ func ByAge(w http.ResponseWriter, r *http.Request) {
 // Create new user
 func CreateNew(w http.ResponseWriter, r *http.Request) {
     r.ParseForm()
-    data := r.PostForm
+    data := r.Form
     user := make(map[string] interface {})
+    fmt.Print(reflect.TypeOf(data["Age"][0]))
     for key, _ := range data {
-        user[key] = r.PostFormValue(key) 
+        value := data[key][0]
+        if intVal, err := strconv.Atoi(value); err == nil {
+            user[key] = intVal
+        } else {
+            user[key] = value
+        }
     }
     users.Create(user)
 }

@@ -1,6 +1,6 @@
 FROM iron/go:dev
 
-# MAINTAINER Vinicius Luiz <viniciuslcp97@gmail.com>
+MAINTAINER Vinicius Luiz <viniciuslcp97@gmail.com>
 
 WORKDIR /app
 

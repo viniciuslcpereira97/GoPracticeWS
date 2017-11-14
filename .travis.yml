@@ -1,4 +1,6 @@
 language: go
 
+go_import_path: github.com/viniciuslcpereira97/GoPracticeWS
+
 go:
   - 1.8.3

@@ -8,7 +8,7 @@ import (
 )
 
 // Configuration file path
-const FILE_PATH = "./config/config.json"
+var FILE_PATH = os.Getenv("WS_CONFIG_DIR")
 
 // Config struct
 type Config struct {
@@ -21,7 +21,7 @@ var configuration Config
 
 // SetUp configuration values
 func SetUp() {
-    config_file, _err := os.Open(FILE_PATH)
+    config_file, _err := os.Open(FILE_PATH + "/config.json")
 
     if _err != nil {
         panic(_err)

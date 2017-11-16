@@ -1,7 +1,7 @@
 package users
 
 import (
-    "github.com/viniciuslcpereira97/practice-ws/DB"
+    "github.com/viniciuslcpereira97/GoPracticeWS/DB"
     "github.com/mitchellh/mapstructure"
 )
 

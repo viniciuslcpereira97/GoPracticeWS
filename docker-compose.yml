@@ -6,10 +6,10 @@ services:
             - 8080:8888
         image: golang:1.8.3-alpine
         environment:
-            - WS_CONFIG_DIR=/go/src/practice-ws/config
+            - WS_CONFIG_DIR=/go/src/GoPracticeWS/config
         volumes:
-            - .:/go/src/practice-ws
-        working_dir: /go/src/practice-ws
+            - .:/go/src/GoPracticeWS
+        working_dir: /go/src/GoPracticeWS
         command: go run main.go
         links:
             - mongodb

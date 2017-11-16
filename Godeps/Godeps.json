@@ -1,5 +1,5 @@
 {
-	"ImportPath": "practice-ws",
+	"ImportPath": "GoPracticeWS",
 	"GoVersion": "go1.8",
 	"GodepVersion": "v79",
 	"Deps": [

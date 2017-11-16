@@ -3,7 +3,7 @@ package main
 import (
     "fmt"
     "net/http"
-    "practice-ws/Routes"
+    "github.com/viniciuslcpereira97/practice-ws/Routes"
 )
 
 func main() {

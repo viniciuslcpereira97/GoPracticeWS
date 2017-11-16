@@ -4,7 +4,7 @@ import (
     "fmt"
     "net/http"
     "github.com/gorilla/mux"
-    "practice-ws/Controllers/Users"
+    "github.com/viniciuslcpereira97/practice-ws/Controllers/Users"
 )
 
 // Route struct

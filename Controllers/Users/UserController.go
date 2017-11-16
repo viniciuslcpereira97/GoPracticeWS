@@ -7,7 +7,7 @@ import (
     "net/http"
     "encoding/json"
     "github.com/gorilla/mux"
-    "practice-ws/DB/Models/Users"
+    "github.com/viniciuslcpereira97/practice-ws/DB/Models/Users"
 )
 
 // Get All users

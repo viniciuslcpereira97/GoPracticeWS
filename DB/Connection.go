@@ -3,7 +3,7 @@ package db
 import (
     "reflect"
     "gopkg.in/mgo.v2"
-    "practice-ws/config"
+    "github.com/viniciuslcpereira97/practice-ws/config"
 )
 
 type DatabaseStruct struct {

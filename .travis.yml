@@ -7,7 +7,7 @@ go:
 
 env:
   global:
-    - WS_CONFIG_DIR
+    - WS_CONFIG_DIR=github.com/viniciuslcpereira97/GoPracticeWS/config
 
 services:
   - mongodb

@@ -19,7 +19,7 @@ func TestRouterIsInitialized(t *testing.T) {
 }
 
 func TestIsRegisteringGetRoutes(t *testing.T) {
-    Get("test.name", "/test/route", GenericHandler)
+    Get("test.get", "/test/route", GenericHandler)
 
     if len(routes) != 1 {
         t.Fatalf("GET Routes - expected length 1 but received %d", len(routes))
@@ -27,9 +27,9 @@ func TestIsRegisteringGetRoutes(t *testing.T) {
 }
 
 func TestIsRegisteringPostRoutes(t *testing.T) {
-    Post("test.name", "/test/route", GenericHandler)
+    Post("test.post", "/test/route", GenericHandler)
 
-    if len(routes) != 1 {
-        t.Fatalf("POST Routes - expected length 1 but received %d", len(routes))
+    if len(routes) != 2 {
+        t.Fatalf("POST Routes - expected length 2 but received %d", len(routes))
     }
 }

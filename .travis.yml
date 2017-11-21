@@ -1,13 +1,13 @@
 language: go
 
-go_import_path: github.com/viniciuslcpereira97/GoPracticeWS
+go_import_path: GoPracticeWS
 
 go:
   - 1.8.3
 
 env:
   global:
-    - WS_CONFIG_DIR=$GOPATH/src/github.com/viniciuslcpereira97/GoPracticeWS/config
+    - WS_CONFIG_DIR=$GOPATH/src/GoPracticeWS/config
 
 services:
   - mongodb

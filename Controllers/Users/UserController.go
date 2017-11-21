@@ -7,7 +7,7 @@ import (
     "net/http"
     "encoding/json"
     "github.com/gorilla/mux"
-    "github.com/viniciuslcpereira97/GoPracticeWS/DB/Models/Users"
+    "GoPracticeWS/DB/Models/Users"
 )
 
 // Get All users

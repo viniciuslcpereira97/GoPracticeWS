@@ -3,7 +3,7 @@ package main
 import (
     "fmt"
     "net/http"
-    "github.com/viniciuslcpereira97/GoPracticeWS/Routes"
+    "GoPracticeWS/Routes"
 )
 
 func main() {

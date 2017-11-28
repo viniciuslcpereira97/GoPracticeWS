@@ -2,7 +2,7 @@
 
 This repository was created to study more about go language.
 
-**Don't forget to point an environment variable called WS_CONFIG_DIR to config directory**
+**Don't forget to export an environment variable called WS_CONFIG_DIR to config directory**
 
 
 # Used packages at this project
